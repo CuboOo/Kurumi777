@@ -21,8 +21,8 @@ const distube = new DisTube(client, {
     leaveOnStop: true
 })
 
-client.on("messageCreate", message => {
-    if (message.content.startsWith("k!play")) {
+
+    if (message.content == "k!play") {
         const voiceChannel = message.member.voice.channel
         if (!voiceChannel) {
             return message.channel.send("Devi essere in un canale vocale")
@@ -244,7 +244,7 @@ if (!queue) return message.channel.send("Coda vuota")
         message.channel.send("Queue stopped")
     }
 
-})
+
 
 distube.on("addSong", (queue, song) => {
     var embed = new Discord.MessageEmbed()
